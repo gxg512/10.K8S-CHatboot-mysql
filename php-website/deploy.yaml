@@ -26,6 +26,22 @@ spec:
       - name: webapp1
         image: gxg513/website
         imagePullPolicy: Always
+        env:
+          - name: MYSQL_USER
+            valueFrom:
+              secretKeyRef:
+                name: secret-name
+                key: user
+          - name: MYSQL_DATABASE
+            valueFrom:
+              secretKeyRef:
+                name: secret-name
+                key: db
+          - name: MYSQL_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: secret-name
+                key: user_pass
         ports:
          - containerPort: 80
         volumeMounts:
