@@ -1,0 +1,20 @@
+<?php
+
+$host="172.17.02.4";
+$user="db_usera";
+$pass="password";
+$db="chat";
+
+$con=mysqli_connect($host,$user,$pass,$db);
+
+if(!$con)
+{
+        print("Not Connected<br>".mysql_error());
+
+}
+else
+{
+        //echo("Connected");
+}
+
+?>

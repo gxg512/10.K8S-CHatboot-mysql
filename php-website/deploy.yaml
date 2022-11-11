@@ -18,6 +18,10 @@ spec:
         app: webapp-sql
         tier: frontend
     spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: task-pv-claim
       containers:
       - name: webapp1
         image: gxg513/website
@@ -25,9 +29,5 @@ spec:
         ports:
          - containerPort: 80
         volumeMounts:
-         - name: nginx-index-file
-           mountPath: /var/lib/html/
-      volumes:
-        - name: nginx-index-file
-          configMap:
-            name: myconfigmap
+         - name: task-pv-storage
+           mountPath:  "/var/www/html"
