@@ -14,7 +14,7 @@ if(!$con)
 }
 else
 {
-        //echo("Connected");
+       echo("Connected");
 }
 
 ?>

@@ -24,7 +24,7 @@ spec:
           claimName: task-pv-claim
       containers:
       - name: webapp1
-        image: gxg513/website
+        image: gxg513/database-website
         imagePullPolicy: Always
         env:
           - name: MYSQL_USER
