@@ -1,0 +1,6 @@
+https://kubernetes.io/docs/tasks/tools/included/optional-kubectl-configs-bash-linux/
+
+STEPS:
+yum install bash-completion
+echo 'source <(kubectl completion bash)' >>~/.bashrc
+exec bash
