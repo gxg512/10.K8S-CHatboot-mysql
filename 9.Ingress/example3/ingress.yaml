@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: apple-ingress
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - www.gxg.ro
+    secretName: ingress-cert
+  rules:
+  - host: "www.gxg.ro"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: apple-service
+            port:
+              number: 80
