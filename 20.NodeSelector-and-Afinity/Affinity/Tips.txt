@@ -1,0 +1,3 @@
+change labels for a node, ex node2
+
+kubectl label node minikube-m02 class-
