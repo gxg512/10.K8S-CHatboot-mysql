@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+    stages {
+        stage('Clone the repo') {
+            steps {
+                git branch: 'main', credentialsId: 'gxg512-private-access', url: 'git@github.com:gxg512/Jenkins-k8s-pipeline.git'
+            }
+        }
+        stage('Build image') {
+            steps {
+                sh 'docker build ./Dockerfile -t "gxg513/wedding-website:${BUILD_NUMBER}"'
+            }
+        }
+        stage('push') {
+            steps {
+                withCredentials([string(credentialsId: 'docker-pass', variable: 'DOCKERHUB_PASS')]) {
+                     sh 'docker login -u gxg513 -p ${DOCKERHUB_PASS}'
+                }
+                sh 'docker push "gxg513/wedding-website:${BUILD_NUMBER}"'
+            }
+        }
+        stage('K8S connect') {
+            steps {
+                withKubeCredentials(kubectlCredentials: [[caCertificate: '', clusterName: 'minikube', contextName: 'minikube', credentialsId: 'admin-token', namespace: 'default', serverUrl: 'https://192.168.49.2:8443']]) {
+                   sh 'kubectl apply -f ./k8s/webapp'
+               }
+            }
+        }
+    }
+}

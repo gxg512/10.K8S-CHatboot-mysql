@@ -1,0 +1,23 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wedding-deploy
+  labels:
+    app: wedding
+spec:
+  selector:
+    matchLabels:
+      app: wedding
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: wedding
+    spec:
+      containers:
+      - name: wedding-container
+        image: gxg513/wedding-website
+        imagePullPolicy: Always
+        ports:
+         - containerPort: 80
