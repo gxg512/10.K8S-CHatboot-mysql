@@ -1,15 +1,16 @@
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ingress-wildcard-host
 spec:
   rules:
-  - host: "www.grafana.com"
+  - host: "www.grafana.gxg"
     http:
       paths:
       - pathType: Prefix
         path: "/"
         backend:
           service:
-            name: my-grafana
+            name: grafana
             port:
               number: 80

@@ -22,3 +22,6 @@ nslookup 10.106.60.147 -> 147.60.106.10.in-addr.arpa	name = prometheus-server.de
 
 Use this in prometheus ->
 http://prometheus-server.default.svc.cluster.local:80
+
+
+Do not forget about ingress from grafana and also add www.grafana.gxg to /etc/hosts
