@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    environment: production
+  name: test-svc
+  namespace: udemy
+spec:
+  ports:
+  - nodePort: 30295
+    port: 80
+    targetPort: plm
+  selector:
+    environment: production
+  type: NodePort
