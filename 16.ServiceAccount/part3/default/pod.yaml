@@ -3,8 +3,13 @@ kind: Pod
 metadata:
   name: pod
   namespace: udemy
+  labels:
+    environment: production
 spec:
+  # automountServiceAccountToken: false #daca nu vrem sa avem montat /run/secrets..
   containers:
   - image: nginx
-    imagePullPolicy: Always
     name: pod
+    ports:
+     - containerPort: 80
+       name: plm
