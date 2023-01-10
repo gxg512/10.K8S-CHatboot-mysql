@@ -7,3 +7,5 @@ kubectl create token service_account_name
 
 For more details:
 https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/
+
+https://cloud.google.com/blog/products/containers-kubernetes/kubernetes-bound-service-account-tokens
