@@ -30,3 +30,15 @@ helm install --debug --dry-run mytest ./PATCHTOCHART
 ###### HELM UPGRADE ######
 
 helm upgrade myconfig-v1 ./HELM-CONFIGMAP-v3/
+
+##### USE SET TO PUT CUSTOM VALUES #####
+
+helm install --dry-run --debug --set costcode=3 test ./HELM-CONFIGMAP-v2/
+
+
+CUPRINS:
+1) HELM-CONFIGMAP-v1 BASIC HELM
+2) HELM-CONFIGMAP-v2 with variables
+3) HELM-CONFIGMAP-v3 with helm buildin variables
+4) HELM-CONFIGMAP-v4 with template functions variables
+5) HELM-CONFIGMAP-v5 with pipeline and default values

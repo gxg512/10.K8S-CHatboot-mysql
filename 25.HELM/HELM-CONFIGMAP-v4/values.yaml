@@ -1,0 +1,4 @@
+costcode: "euros"
+infra:
+   zone: eu,asia,usa
+   planet: earTh

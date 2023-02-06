@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-configmap
+data:
+  myvalue: "updated simple configmap"
+  zone: {{ quote .Values.infra.zone }}
+  zone2: {{ upper .Values.infra.planet }}
+  pipeline: {{ .Values.projectname | upper | quote }}
+  now: {{ now | date "2006:01:02" | quote }}
