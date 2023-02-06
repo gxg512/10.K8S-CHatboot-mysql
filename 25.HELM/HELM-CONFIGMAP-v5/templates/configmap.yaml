@@ -8,3 +8,4 @@ data:
   zone2: {{ upper .Values.infra.planet }}
   pipeline: {{ .Values.projectname | upper | quote }}
   now: {{ now | date "2006:01:02" | quote }}
+  mydefault: {{ .Values.contact | default "N/A" | quote }}
