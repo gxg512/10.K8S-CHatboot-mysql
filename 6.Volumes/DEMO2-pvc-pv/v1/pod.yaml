@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pv-recycler
+  namespace: default
+spec:
+  restartPolicy: Never
+  containers:
+  - name: pv-recycler
+    image: "nginx"
+    volumeMounts:
+     - mountPath: "/folder"
+       name: myvol
+  volumes:
+    - name: myvol
+      persistentVolumeClaim: 
+        claimName: task-pv-claim
