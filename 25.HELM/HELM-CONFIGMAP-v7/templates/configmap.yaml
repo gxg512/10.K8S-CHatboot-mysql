@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-configmap
+data:
+  myvalue: "simple configmap"
+  {{- with .Values.tags }}
+  realowner: {{ .owner }}
+  realenv: {{ .env }}
+  {{- end }}

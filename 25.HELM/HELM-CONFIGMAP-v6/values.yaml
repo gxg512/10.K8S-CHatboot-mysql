@@ -1,0 +1,6 @@
+costcode: "euros"
+infra:
+   zone: eu,asia,usa
+   planet: earTh
+projectname: "EU"
+#contact: "06464"

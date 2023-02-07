@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-configmap
+data:
+  myvalue: "simple configmap"
+  {{ if eq .Values.projectname "EU" }}
+  test: true 
+  {{ end }}
+  {{- if eq .Values.projectname "EU" -}}
+  test2: "removing blank lines by adding -" 
+  {{- end -}}

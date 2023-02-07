@@ -42,3 +42,8 @@ CUPRINS:
 3) HELM-CONFIGMAP-v3 with helm buildin variables
 4) HELM-CONFIGMAP-v4 with template functions variables
 5) HELM-CONFIGMAP-v5 with pipeline and default values
+6) HELM-CONFIGMAP-v6 with if/else
+7) HELM-CONFIGMAP-v7 with with .Values.tags 
+8) HELM-CONFIGMAP-v8 with range loops
+9) HELM-CONFIGMAP-v9 with variables . 
+Variables are assigned with a special assigment operator :=

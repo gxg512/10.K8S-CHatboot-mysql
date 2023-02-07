@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-configmap
+data:
+  myvalue: "simple configmap"
+  used_programming_language: |-
+  {{- range .Values.language }}
+   - {{ . | title | quote }}
+  {{- end }}
