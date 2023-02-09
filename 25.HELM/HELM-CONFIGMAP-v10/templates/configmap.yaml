@@ -1,0 +1,17 @@
+{{- define "mychart.systemlables" }}
+  labels:
+    drive: ssd
+    machine: frontdrive
+    rack: 4c
+    vcard: 8g
+{{- end }}
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-configmap
+  {{- template "mychart.systemlables" }}
+data:
+  myvalue: "simple configmap"
+  {{ $realname2 := .Release.Name }}
+  Release: {{ $realname2 }}-v2

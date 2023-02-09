@@ -47,3 +47,9 @@ CUPRINS:
 8) HELM-CONFIGMAP-v8 with range loops
 9) HELM-CONFIGMAP-v9 with variables . 
 Variables are assigned with a special assigment operator :=
+10) HELM-CONFIGMAP-v10 include templates from same file
+11) HELM-CONFIGMAP-v11 include scope. Daca vrem sa se citeasca valorile din "{{ $.Release.Service }}" trebuie sa punem punct sau dolar atunci cand dorim sa includem acele valori ex
+  {{- template "mychart.systemlables" $ }}
+  sau
+  {{- template "mychart.systemlables" . }}
+Acestea reprezinta "the scope" si sunt necesare ca ne citeasca variabilele build in din helm

@@ -1,0 +1,8 @@
+costcode: "euros"
+infra:
+   zone: eu,asia,usa
+   planet: earTh
+projectname: "EU"
+tags:
+  env: prod
+  owner: George
