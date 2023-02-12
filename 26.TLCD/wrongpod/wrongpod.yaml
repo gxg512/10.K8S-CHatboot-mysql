@@ -1,0 +1,15 @@
+apiVersion: apps/v1
+kind: pod
+metadata:
+  name: wordpress-pod-2
+  labels:
+    app: wordpress
+spec:
+  containers:
+      - image: gxg513/wordpress
+        name: wordpress-container
+        command:
+         - sleep
+         - "14"
+        ports:
+        - containerPort: 80
