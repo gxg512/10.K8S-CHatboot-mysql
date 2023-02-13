@@ -53,3 +53,10 @@ Variables are assigned with a special assigment operator :=
   sau
   {{- template "mychart.systemlables" . }}
 Acestea reprezinta "the scope" si sunt necesare ca ne citeasca variabilele build in din helm
+
+12) HELM-CONFIGMAP-v12 include template using include. De asemenea NOTES a fost adaugat
+
+Adica:
+  labels:
+    appname: test
+    appname va avea 4 spatii libere inainte pe linia de mai sus
