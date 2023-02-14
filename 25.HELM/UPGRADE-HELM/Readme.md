@@ -29,3 +29,9 @@ helm upgrade test --debug chartmuseumrepo/myapp --version 0.1.3
 helm history test
 
 rollback: helm rollback test 2 -> rollback to revision 2
+
+
+####################
+Insert custom values
+helm create test
+helm install test-2 --dry-run --debug test/ --set service.type=NodePort
