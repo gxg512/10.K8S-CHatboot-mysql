@@ -20,3 +20,12 @@ helm history test -> vezi cand au fost deployate chart-urile
 helm get values --revision=1 test
 helm get manifest test  -> vezi cum arata fisierele yaml ce ruleaza acum
 helm get manifest test --revision 1 -> cum aratau fisierele yaml ce au fost aplicate la versiune precedenta
+
+#####################
+ROLlBACK
+
+helm install test chartmuseumrepo/myapp --version 0.1.2
+helm upgrade test --debug chartmuseumrepo/myapp --version 0.1.3
+helm history test
+
+rollback: helm rollback test 2 -> rollback to revision 2
