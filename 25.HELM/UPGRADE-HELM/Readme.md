@@ -35,3 +35,8 @@ rollback: helm rollback test 2 -> rollback to revision 2
 Insert custom values
 helm create test
 helm install test-2 --dry-run --debug test/ --set service.type=NodePort
+
+####################
+
+You can also add hooks that will be triggered when you want based on annotations ex presinstall, postinstall etc
+You can also use weight triggers based on particular patterns
